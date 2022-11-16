@@ -1,0 +1,23 @@
+{
+  "name": "holidates-jada-cli",
+  "version": "1.0.0",
+  "description": "Becode project to display the holiday dates from each country.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Da-nae/holidates-Jada-CLI.git"
+  },
+  "author": "Jade Muratet and Danaé Grosjean",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Da-nae/holidates-Jada-CLI/issues"
+  },
+  "homepage": "https://github.com/Da-nae/holidates-Jada-CLI#readme",
+  "dependencies": {
+    "data.js": "^0.12.11",
+    "prompt-sync": "^4.2.0"
+  }
+}
