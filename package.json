@@ -1,6 +1,6 @@
 {
   "name": "@da-nae/holidates",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Becode project to display the holiday dates from each country.",
   "main": "index.js",
   "bin": {
