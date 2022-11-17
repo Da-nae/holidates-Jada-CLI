@@ -1,8 +1,11 @@
 {
   "name": "@da-nae/holidates",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Becode project to display the holiday dates from each country.",
   "main": "index.js",
+  "bin": {
+    "holidates": "./index.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
