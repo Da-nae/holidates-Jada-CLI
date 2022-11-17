@@ -6,13 +6,27 @@ import figlet from 'figlet';
 
 const country = process.argv[2];
 const countryCode = countryList.getCode(country);
-const year = new Date().getFullYear();
+const yearInput = process.argv[3];
 
-async function getCountryCodeAsync(year, countryCode) {
-    return await axios.get(`https://date.nager.at/api/v3/PublicHolidays/${year}/${countryCode}`);
+function year(yearInput) {
+    let givenYear;
+
+    if (yearInput) {
+        givenYear = process.argv[3];
+    } else {
+        givenYear = new Date().getFullYear();
+    }
+
+    return givenYear;
 }
 
-const response = getCountryCodeAsync(year, countryCode);
+const givenYear = year(yearInput);
+
+async function getCountryCodeAsync(givenYear, countryCode) {
+    return await axios.get(`https://date.nager.at/api/v3/PublicHolidays/${givenYear}/${countryCode}`);
+}
+
+const response = getCountryCodeAsync(givenYear, countryCode);
 
 figlet('Holidates !', function(err, data) {
     if (err) {
@@ -26,6 +40,6 @@ figlet('Holidates !', function(err, data) {
 response.then(datas => {
 
     for (let d of datas.data) {
-        console.log(chalk.cyan(`${d.date}:`), chalk.yellow(`${d.name}`), chalk.magenta(`- aka - ${d.localName}`));
+        console.log(chalk.cyan(`${d.date}:`), chalk.yellow(`${d.name}`).padEnd(30), chalk.magenta(`- aka - ${d.localName}`));
     }
 });
